@@ -16,7 +16,8 @@ optional_kwargs: {}
 
 test_input: null # ../test_input.npy
 test_output: null # ../test_output.npy
-thumbnail: null # ./nuclei_thumbnail.png
+covers:
+  - https://oeway.github.io/ImJoy-Plugins/hpa-classification/hpa-classification-cover.gif
 
 # TODO double check inputs/outputs
 inputs:
