@@ -1,0 +1,48 @@
+name: HPA Classification ShuffleNetV2
+description: A light-weight model for HPA image classification competition
+cite:
+authors:
+  - @mosheliv
+  - Wei OUYANG
+documentation: HPAShuffleNetV2.md
+tags: [shufflenet, tensorflow.js, classification]
+
+format_version: 0.1.0
+language: javascript
+framework: tensorflow.js
+
+source: https://raw.githubusercontent.com/oeway/Anet-Model-Zoo/master/4_hpa_shufflenet_v2/model.json
+optional_kwargs: {}
+
+test_input: null # ../test_input.npy
+test_output: null # ../test_output.npy
+thumbnail: null # ./nuclei_thumbnail.png
+
+# TODO double check inputs/outputs
+inputs:
+  - name: raw
+    axes: byxc
+    data_type: float32
+    data_range: [-inf, inf]
+    shape: [1, 512, 512, 3]
+#        min: [1, 1, 32, 32]
+#        step: [0, 0, 32, 32]
+outputs:
+  - name: output
+    axes: null
+    data_type: float32
+    data_range: [0, 1]
+    shape: [1, 28]
+#    halo: [0, 0, 32, 32]
+#    shape:
+#        reference_input: raw
+#        scale: [1, 1, 1, 1]
+#        offset: [0, 0, 0, 0]
+
+prediction:
+    preprocess: null
+    weights:
+        source: https://raw.githubusercontent.com/oeway/Anet-Model-Zoo/master/4_hpa_shufflenet_v2/model.json
+        hash: {md5: TODO}
+    postprocess: []
+    dependencies: tfjs
