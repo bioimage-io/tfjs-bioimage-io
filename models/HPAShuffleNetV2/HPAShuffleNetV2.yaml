@@ -2,7 +2,7 @@ name: HPA Classification ShuffleNetV2
 description: A light-weight model for HPA image classification competition
 cite:
 authors:
-  - @mosheliv
+  - Moshe Livne
   - Wei OUYANG
 documentation: HPAShuffleNetV2.md
 tags: [shufflenet, tensorflow.js, classification]
