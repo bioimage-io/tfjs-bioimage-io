@@ -23,8 +23,8 @@ This plugin allows to predict the subcellular protein localization pattern for a
         "placeholder": ""
     }
     }],
-    "version": "0.2.0",
-    "api_version": "0.1.2",
+    "version": "0.2.1",
+    "api_version": "0.1.7",
     "url": "",
     "description": "ShuffleNetV2 for HPA.",
     "icon": "https://raw.githubusercontent.com/bioimage-io/tfjs-bioimage-io/master/apps/hpa-logo.gif",
@@ -32,6 +32,7 @@ This plugin allows to predict the subcellular protein localization pattern for a
     "outputs": null,
     "env": null,
     "requirements": [
+        "https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.13.1/js-yaml.min.js",
         "https://cdn.jsdelivr.net/npm/apexcharts",
         "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs",
         "https://cdn.jsdelivr.net/npm/simpleheat@0.4.0/simpleheat.min.js",
@@ -397,7 +398,8 @@ class ImJoyPlugin {
     }
     async runOneModel(model_info){
         const response = await fetch(model_info.config_url)
-        const model_config = await response.text()
+        const yaml_text = await response.text()
+        const model_config = jsyaml.load(yaml_text);
         await this.init(model_config.prediction.weights.source)
     }
 
