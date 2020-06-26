@@ -6,6 +6,8 @@ authors:
   - Wei OUYANG
 documentation: HPAShuffleNetV2.md
 tags: [shufflenet, tensorflow.js, classification]
+git_repo: https://github.com/CellProfiling/HPA-Special-Prize
+license: Apache 2.0
 
 format_version: 0.1.0
 language: javascript
